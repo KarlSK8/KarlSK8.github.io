@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Karl Skaff | Business Card</title>
+  <title>{{name}} | Business Card</title>
   <style>
     :root {
       --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
@@ -68,19 +68,19 @@
 <body>
   <div class="card">
     <img src="https://i.pravatar.cc/100?img=13" alt="Profile" class="avatar" />
-    <h1>Karl Skaff</h1>
-    <p>Managing Partner | Computer Engineer</p>
+    <h1>{{name}}</h1>
+    <p>{{title}} | {{department}}</p>
 
     <div class="socials">
       {% if linkedin %}
-      <a href="https://linkedin.com/in/karlskaff" target="_blank" title="LinkedIn">
+      <a href="{{linkedin}}" target="_blank" title="LinkedIn">
         <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM4.5 9h4.998v12H4.5V9zm7.5 0h4.8v1.71h.07c.67-1.25 2.31-2.57 4.74-2.57 5.07 0 6 3.34 6 7.66V21h-5v-6.01c0-1.44-.03-3.29-2-3.29s-2.31 1.57-2.31 3.18V21h-5V9z"/></svg>
       </a>
       {% endif %}
       
       {% if email %}
       <!-- Email -->
-      <a href="mailto:karlgskaf@gmail.com" title="Email">
+      <a href="mailto:{{email}}" title="Email">
         <svg viewBox="0 0 24 24"><path d="M12 13.065L1.5 6h21L12 13.065zM1.5 18V8.355l10.5 6.736 10.5-6.736V18h-21z"/></svg>
       </a>
       {% endif %}
