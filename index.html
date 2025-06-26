@@ -100,5 +100,17 @@
       }
     };
   </script>
+  <script>
+    const toggleTheme = () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    };
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+      }
+    };
+  </script>
 </body>
 </html>
