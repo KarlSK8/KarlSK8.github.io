@@ -1,21 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Card</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Digital Card</title>
+  <style>
+    :root {
+      --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-color: white;
+      --button-bg: white;
+      --button-text: #3498db;
+    }
+
+    .light-theme {
+      --bg-color: linear-gradient(135deg, #ffffff, #f0f0f0);
+      --card-bg: rgba(0, 0, 0, 0.05);
+      --text-color: #2c3e50;
+      --button-bg: #2c3e50;
+      --button-text: white;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: all 0.4s ease;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease-out;
+      transition: background 0.4s ease;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid var(--text-color);
+    }
+
+    h1 {
+      margin: 0.5rem 0;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .socials {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .socials a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .email-button {
+      margin-top: 1.5rem;
+      padding: 10px 20px;
+      background: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .email-button:hover {
+      opacity: 0.9;
+    }
+
+    .theme-toggle {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-decoration: underline;
+      cursor: pointer;
+      color: var(--text-color);
+      opacity: 0.75;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
-            <h1>John Doe</h1>
-            <h2>Software Engineer</h2>
-        </div>
-        <div class="card-body">
-            <p>Email: john.doe@example.com</p>
-            <p>Phone: +1234567890</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe    </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/300?img=13" alt="Profile" class="avatar" />
+    <h1>Your Name</h1>
+    <p>Web Developer | Designer | Entrepreneur</p>
+
+    <div class="socials">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">💼</a>
+      <a href="https://github.com/yourprofile" target="_blank" title="GitHub">🐙</a>
+      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">🐦</a>
+      <a href="mailto:you@example.com" title="Email">📧</a>
     </div>
+
+    <button class="email-button" onclick="window.location='mailto:you@example.com'">Contact Me</button>
+    <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+  </div>
+
+  <script>
+    const toggleTheme = () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    };
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+      }
+    };
+  </script>
 </body>
 </html>
