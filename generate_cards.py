@@ -2,7 +2,7 @@ import csv, os
 from jinja2 import Template
 
 def clean_keys(row):
-    return {k.strip(): v.strip() for k, v in row.items()}
+    return {str(k).strip(): str(v).strip() if v else "" for k, v in row.items()}
 
 with open("card_template.html", encoding="utf-8") as f:
     template = Template(f.read())
