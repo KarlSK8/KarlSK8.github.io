@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Karl Skaff | Digital Card</title>
+  <title>Your Name | Digital Card</title>
+
+  <!-- ✅ Font Awesome CDN for real icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-pap3+l8npWRu5wEkPpyHvGXLZr7CzOzRfN+YOJ2BssvoVuKUXnPVLDJ7BMBaYq2cEvnm7PFGxIpRB3OD7Wh8XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     :root {
       --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
@@ -73,13 +77,13 @@
 
     .socials a {
       color: var(--text-color);
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: transform 0.3s ease;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .socials a:hover {
       transform: scale(1.2);
+      color: var(--button-bg);
     }
 
     .email-button {
@@ -117,11 +121,11 @@
   <div class="card">
     <img src="https://i.pravatar.cc/300?img=13" alt="Profile" class="avatar" />
     <h1>Your Name</h1>
-    <p>Managing Partner | Computer Engineer</p>
+    <p>Web Developer | Designer | Entrepreneur</p>
 
     <div class="socials">
       <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://github.com/yourprofile" target="_blank" title="GitHub">
         <i class="fab fa-github"></i>
