@@ -1,0 +1,2 @@
+username,name,title,department,email,phone,avatar,linkedin,github,twitter,logo,background
+karlskaff,Karl Skaff,Managing Partner,Computer Engineer,karl@example.com,,karlskaff/avatar.png,https://linkedin.com/in/karl,https://github.com/karl,,https://yourcompany.com/logo.png,linear-gradient(135deg, #1e3a8a, #2563eb)
