@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Digital Card</title>
-
-  <!-- ✅ Font Awesome CDN for real icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-pap3+l8npWRu5wEkPpyHvGXLZr7CzOzRfN+YOJ2BssvoVuKUXnPVLDJ7BMBaYq2cEvnm7PFGxIpRB3OD7Wh8XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <title>Karl Skaff | Business Card</title>
   <style>
     :root {
       --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
@@ -15,14 +11,6 @@
       --text-color: white;
       --button-bg: white;
       --button-text: #3498db;
-    }
-
-    .light-theme {
-      --bg-color: linear-gradient(135deg, #ffffff, #f0f0f0);
-      --card-bg: rgba(0, 0, 0, 0.05);
-      --text-color: #2c3e50;
-      --button-bg: #2c3e50;
-      --button-text: white;
     }
 
     body {
@@ -34,20 +22,15 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      transition: all 0.4s ease;
     }
 
     .card {
       background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
       text-align: center;
       max-width: 350px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      animation: fadeIn 1.2s ease-out;
-      transition: background 0.4s ease;
+      backdrop-filter: blur(10px);
     }
 
     .avatar {
@@ -60,12 +43,6 @@
 
     h1 {
       margin: 0.5rem 0;
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1rem;
-      opacity: 0.85;
     }
 
     .socials {
@@ -76,72 +53,41 @@
     }
 
     .socials a {
-      color: var(--text-color);
-      font-size: 1.6rem;
-      transition: transform 0.3s ease, color 0.3s ease;
+      width: 32px;
+      height: 32px;
+      fill: white;
+      transition: transform 0.3s;
     }
 
     .socials a:hover {
       transform: scale(1.2);
-      color: var(--button-bg);
-    }
-
-    .email-button {
-      margin-top: 1.5rem;
-      padding: 10px 20px;
-      background: var(--button-bg);
-      color: var(--button-text);
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .email-button:hover {
-      opacity: 0.9;
-    }
-
-    .theme-toggle {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      text-decoration: underline;
-      cursor: pointer;
-      color: var(--text-color);
-      opacity: 0.75;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+      fill: #ffce00;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="https://i.pravatar.cc/300?img=13" alt="Profile" class="avatar" />
-    <h1>Your Name</h1>
-    <p>Web Developer | Designer | Entrepreneur</p>
+    <img src="https://i.pravatar.cc/100?img=13" alt="Profile" class="avatar" />
+    <h1>Karl Skaff</h1>
+    <p>Managing Partner | Computer Engineer</p>
 
     <div class="socials">
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/karlskaff" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM4.5 9h4.998v12H4.5V9zm7.5 0h4.8v1.71h.07c.67-1.25 2.31-2.57 4.74-2.57 5.07 0 6 3.34 6 7.66V21h-5v-6.01c0-1.44-.03-3.29-2-3.29s-2.31 1.57-2.31 3.18V21h-5V9z"/></svg>
       </a>
-      <a href="https://github.com/yourprofile" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
+
+      <!-- GitHub -->
+      <a href="https://github.com/KarlSK8" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-1.98c-3.2.7-3.88-1.52-3.88-1.52-.52-1.31-1.28-1.66-1.28-1.66-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.78 2.72 1.27 3.38.97.11-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.17 1.85 1.17 3.11 0 4.43-2.71 5.4-5.29 5.68.41.35.77 1.03.77 2.07v3.06c0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
       </a>
-      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="mailto:you@example.com" title="Email">
-        <i class="fas fa-envelope"></i>
+
+      <!-- Email -->
+      <a href="mailto:karlgskaf@gmail.com" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M12 13.065L1.5 6h21L12 13.065zM1.5 18V8.355l10.5 6.736 10.5-6.736V18h-21z"/></svg>
       </a>
     </div>
-
-    <button class="email-button" onclick="window.location='mailto:you@example.com'">Contact Me</button>
-    <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
   </div>
-
   <script>
     const toggleTheme = () => {
       const isLight = document.body.classList.toggle('light-theme');
