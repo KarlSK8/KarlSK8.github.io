@@ -2,82 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karl Skaff | Digital Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karl Skaff | Business Card</title>
   <style>
     :root {
-      /* Primary editable variables */
-      --bg-gradient: linear-gradient(135deg;
-      --card-glass: rgba(255,255,255,0.08);
-      --text: #ffffff;
-      --accent: #ffce00;
+      --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-color: white;
+      --button-bg: white;
+      --button-text: #3498db;
     }
 
-    /* --- Base layout --- */
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: 'Segoe UI',system-ui,Arial,sans-serif;
-      display:flex;justify-content:center;align-items:center;
-      background:var(--bg-gradient);
-      min-height:100vh;color:var(--text);
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    /* --- Card --- */
-    .card{
-      width:340px;max-width:90%;padding:2rem 2.2rem;
-      background:var(--card-glass);
-      border:1px solid rgba(255,255,255,0.25);
-      backdrop-filter:blur(14px);
-      border-radius:20px;text-align:center;
-      box-shadow:0 12px 32px rgba(0,0,0,0.35);
-      animation:fadin .9s ease-out forwards;
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 350px;
+      backdrop-filter: blur(10px);
     }
 
-    @keyframes fadin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-
-    /* --- Avatar & logo --- */
-    .logo{max-height:52px;margin-bottom:1rem}
-    .avatar{
-      width:110px;height:110px;border-radius:50%;
-      object-fit:cover;margin-bottom:1rem;
-      border:3px solid var(--accent);
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid var(--text-color);
     }
 
-    /* --- Typography --- */
-    h1{font-size:1.65rem;margin:.4rem 0 .25rem;text-shadow:0 2px 4px rgba(0,0,0,.2)}
-    .role{font-size:.95rem;opacity:.85;margin-bottom:.75rem}
+    h1 {
+      margin: 0.5rem 0;
+    }
 
-    /* --- Contact & socials --- */
-    .info{font-size:.9rem;line-height:1.4}
-    .info a{color:var(--text);text-decoration:none}
-    .socials{display:flex;justify-content:center;gap:1.1rem;margin-top:1.4rem}
-    .socials a svg{width:26px;height:26px;fill:var(--text);transition:transform .3s,fill .3s}
-    .socials a:hover svg{transform:scale(1.2);fill:var(--accent)}
+    .socials {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .socials a {
+      width: 32px;
+      height: 32px;
+      fill: white;
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      fill: #ffce00;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="https://yourcompany.com/logo.png" alt="Logo" class="logo"/>
-    <img src="karlskaff/avatar.png" alt="Karl Skaff Avatar" class="avatar"/>
+    <img src="https://i.pravatar.cc/100?img=13" alt="Profile" class="avatar" />
     <h1>Karl Skaff</h1>
     <div class="role">Managing Partner &nbsp;|&nbsp; Computer Engineer</div>
 
-    <div class="info">
-      <div>Email: <a href="mailto:karl@example.com">karl@example.com</a></div>
-      
-    </div>
-
     <div class="socials">
-      
-        <a href="https://linkedin.com/in/karl" target="_blank" title="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM4.5 9h4.998v12H4.5V9zm7.5 0h4.8v1.71h.07c.67-1.25 2.31-2.57 4.74-2.57 5.07 0 6 3.34 6 7.66V21h-5v-6.01c0-1.44-.03-3.29-2-3.29s-2.31 1.57-2.31 3.18V21h-5V9z"/></svg>
-        </a>
-      
-        <a href="https://github.com/karl" target="_blank" title="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-1.98c-3.2.7-3.88-1.52-3.88-1.52-.52-1.31-1.28-1.66-1.28-1.66-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.78 2.72 1.27 3.38.97.11-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.17 1.85 1.17 3.11 0 4.43-2.71 5.4-5.29 5.68.41.35.77 1.03.77 2.07v3.06c0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
-        </a>
-      
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/karlskaff" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM4.5 9h4.998v12H4.5V9zm7.5 0h4.8v1.71h.07c.67-1.25 2.31-2.57 4.74-2.57 5.07 0 6 3.34 6 7.66V21h-5v-6.01c0-1.44-.03-3.29-2-3.29s-2.31 1.57-2.31 3.18V21h-5V9z"/></svg>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/KarlSK8" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-1.98c-3.2.7-3.88-1.52-3.88-1.52-.52-1.31-1.28-1.66-1.28-1.66-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.78 2.72 1.27 3.38.97.11-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.17 1.85 1.17 3.11 0 4.43-2.71 5.4-5.29 5.68.41.35.77 1.03.77 2.07v3.06c0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:karlgskaf@gmail.com" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M12 13.065L1.5 6h21L12 13.065zM1.5 18V8.355l10.5 6.736 10.5-6.736V18h-21z"/></svg>
+      </a>
     </div>
   </div>
+  <script>
+    const toggleTheme = () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    };
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+      }
+    };
+  </script>
 </body>
 </html>
