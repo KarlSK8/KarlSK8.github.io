@@ -49,3 +49,14 @@ body {
 .card-body a:hover {
     text-decoration: underline;
 }
+
+.info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.info a {
+  color: inherit;
+  text-decoration: underline;
+}
