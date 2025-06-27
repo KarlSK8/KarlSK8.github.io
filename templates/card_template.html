@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ name }} | Business Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: {{ background | default('linear-gradient(135deg,#0f172a,#2563eb)') }};
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-color: white;
+      --accent: #22d3ee;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 360px;
+      width: 92%;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--text-color);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h1 { font-size: 1.6rem; margin: 0.5rem 0; }
+    .role { opacity: 0.85; font-size: 1rem; margin-bottom: 1.2rem; }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .socials a {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
+      background: var(--accent);
+    }
+
+    .socials svg {
+      fill: white;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="{{ avatar }}" alt="{{ name }} avatar" class="avatar" />
+    <h1>{{ name }}</h1>
+    <p class="role">{{ title }}{% if department %} | {{ department }}{% endif %}</p>
+
+    <div class="socials">
+      {% if linkedin %}
+      <a href="{{ linkedin }}" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5A2.5 2.5 0 0 1 4.98 3.5zM4.5 9h5v12h-5zm7.5 0h4.8v1.7h.1c.7-1.3 2.3-2.6 4.7-2.6 5.1 0 6 3.3 6 7.7V21h-5v-6c0-1.4 0-3.3-2-3.3s-2.3 1.6-2.3 3.2V21h-5V9z"/></svg>
+      </a>
+      {% endif %}
+      {% if github %}
+      <a href="{{ github }}" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .7C5.8.7.7 5.8.7 12c0 5 3.2 9.2 7.7 10.6.6.1.8-.2.8-.6v-2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.2.1 1.8 1.3 1.8 1.3 1 1.8 2.7 1.2 3.3.9.1-.7.4-1.3.7-1.5-2.5-.3-5.1-1.2-5.1-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.4-1.4.1-2.8 0 0 1-.3 3 1.1a10 10 0 0 1 5.3 0c2-1.4 3-1.1 3-1.1.5 1.4.2 2.5.1 2.8.7.8 1.1 1.8 1.1 3 0 4.2-2.6 5.1-5.1 5.4.4.3.8 1 .8 2v3c0 .4.2.7.8.6A10.8 10.8 0 0 0 23.3 12C23.3 5.8 18.2.7 12 .7z"/></svg>
+      </a>
+      {% endif %}
+      {% if email %}
+      <a href="mailto:{{ email }}" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M12 13.2 2.3 6h19.4L12 13.2zm9.7 7.4H2.3V7.8L12 15l9.7-7.2z"/></svg>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

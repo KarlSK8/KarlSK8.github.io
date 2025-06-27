@@ -1,16 +1,18 @@
-import csv, os
+import csv
+import os
 from jinja2 import Template
 
-def clean_keys(row):
-    return {str(k).strip(): str(v).strip() if v else "" for k, v in row.items()}
+TEMPLATE_PATH = "templates/card_template.html"
+CARDS_DIR = "data/cards.csv"
 
-with open("card_template.html", encoding="utf-8") as f:
+os.makedirs(CARDS_DIR, exist_ok=True)
+
+with open(TEMPLATE_PATH, encoding="utf-8") as f:
     template = Template(f.read())
 
-with open("employees.csv", newline="", encoding="utf-8-sig") as csvfile:
-    for raw_row in csv.DictReader(csvfile):
-        row = clean_keys(raw_row)
-        folder = row["username"]
-        os.makedirs(folder, exist_ok=True)
-        with open(f"{folder}/index.html", "w", encoding="utf-8") as f:
+with open("cards.csv", encoding="utf-8") as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        filename = f"{CARDS_DIR}/{row['name'].replace(' ', '_').lower()}.html"
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(template.render(**row))

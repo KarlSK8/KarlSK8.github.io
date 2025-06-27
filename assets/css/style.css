@@ -1,0 +1,109 @@
+/* assets/css/style.css */
+:root {
+  --bg: linear-gradient(135deg, #0f172a, #2563eb);
+  --glass: hsla(0,0%,100%,0.08);
+  --text: #fff;
+  --accent: #22d3ee;
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  backdrop-filter: blur(14px) saturate(140%);
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  width: 92%;
+  max-width: 380px;
+  padding: 2.2rem 2.4rem;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin: auto;
+  box-shadow: 0 0 0 4px rgba(0,0,0,.15);
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: .8rem 0 .3rem;
+}
+
+.role {
+  font-size: 1rem;
+  opacity: .85;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.3rem;
+}
+
+.contact a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  bordr-radius: 50%;
+  background: rgba(255,255,255,.1);
+  transition: .3s backdrop-filter, .3s transform;
+}
+
+.contact a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text);
+  transition: fill .3s;
+}
+
+.contact a:hover {
+  transform: translateY(-3px);
+  backdrop-filter: brightness(140%);
+}
+
+.contact a:hover svg {
+  fill: var(--accent);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: .65rem 1.6rem;
+  background: var(--accent);
+  color: #0f172a;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: background .3s;
+}
+
+.cta:hover {
+  background: #67e8f9;
+}
