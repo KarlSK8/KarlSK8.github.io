@@ -3,140 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-ZJH6+hEtXoKyM0qK+e5xzUO9ef6OmXZ7URCRonpEsmkxwG/Yu2jzRlD2s8eUe4DqvQ8urXeYe8P+0eYXzNlbWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css">
 
   <title>Jane Doe | Business Card</title>
-  <style>
-    :root {
-      --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --text-color: white;
-      --accent-color: #ffce00;
-    }
 
-    body.light-theme {
-      --bg-color: #f2f2f2;
-      --card-bg: #ffffff;
-      --text-color: #1e1e1e;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: transparent;
-      border: 2px solid var(--text-color);
-      color: var(--text-color);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      background: var(--text-color);
-      color: var(--card-bg);
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 1.6rem;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 290px; /* reduced from 360px */
-      width: 90%;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid var(--text-color);
-    }
-
-    h1 {
-      margin: 0.5rem 0;
-      font-size: 1.6rem;
-    }
-
-    .role {
-      font-size: 1rem;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-    }
-
-    .info {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    .socials {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-  padding-left: 0.4rem;
-}
-
-
-    .social-link {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 0.95rem;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.social-link i {
-  font-size: 18px;
-  color: var(--text-color);
-}
-
-
-    .social-link svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--text-color);
-    }
-
-    .social-link:hover {
-      transform: scale(1.05);
-      color: var(--accent-color);
-    }
-
-    .social-link:hover svg {
-      fill: var(--accent-color);
-    }
-  </style>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
 
   <div class="card">
-    <img src="C:\Users\Carl.skaff\Desktop\KarlSK8.github.io\data\tab_logo.png" alt="Jane Doe's avatar" class="avatar" />
+    <img src="../data/tab_logo.png" alt="Jane Doe's avatar" class="avatar" />
     
     <h1>Jane Doe</h1>
 
