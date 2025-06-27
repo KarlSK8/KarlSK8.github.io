@@ -1,3 +1,4 @@
-name,title,department,company,location,branch,email,phone,bio,linkedin,github,avatar
-Karl Skaff,Managing Partner,Technology,La Valeur Supermarché,Ashrafieh, Sassine,karl@example.com,+9613123456,"Empowering digital presence through clean design and scalable tools.",https://www.linkedin.com/in/karl-skaff,https://github.com/karlsk8,https://i.pravatar.cc/100?img=13
-Jane Doe,Marketing Director,Marketing,InnovateX Solutions,Beirut, Downtown,jane@innovatex.com,+9613123123,"Passionate about brand strategy and digital outreach.",https://www.linkedin.com/in/janedoe,https://github.com/janedoe,https://i.pravatar.cc/100?img=10
+name,title,department,location,branch,email,linkedin,github,website,avatar
+Karl Skaff,Software Engineer,IT Department,Beirut,Headquarters,carl.skaff@example.com,https://linkedin.com/in/carl-skaff,https://github.com/carl-skaff,www.lavaleursupermarche.com,images/carl.jpg
+Jane Doe,Marketing Manager,Marketing,New York,Branch A,jane.doe@example.com,https://linkedin.com/in/jane-doe,https://github.com/janedoe,https://janemarketing.io,https://i.pravatar.cc/100?u=jane
+John Smith,Product Designer,Design,San Francisco,Branch B,john.smith@example.com,https://linkedin.com/in/johnsmith,https://github.com/johnsmith,https://johnsmith.design,https://i.pravatar.cc/100?u=john
