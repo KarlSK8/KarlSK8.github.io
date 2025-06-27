@@ -1,18 +1,24 @@
 import csv
 import os
-from jinja2 import Template
+from jinja2 import Environment, FileSystemLoader
 
-TEMPLATE_PATH = "templates/card_template.html"
-CARDS_DIR = "data/cards.csv"
+# Ensure output directory exists
+output_dir = "cards"
+os.makedirs(output_dir, exist_ok=True)
 
-os.makedirs(CARDS_DIR, exist_ok=True)
+# Load the Jinja2 environment
+env = Environment(loader=FileSystemLoader('.'))
+template = env.get_template("card_template.html")
 
-with open(TEMPLATE_PATH, encoding="utf-8") as f:
-    template = Template(f.read())
+def clean_keys(row):
+    return {str(k).strip(): str(v).strip() for k, v in row.items() if k}
 
-with open("cards.csv", encoding="utf-8") as csvfile:
+with open("cards.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
-    for row in reader:
-        filename = f"{CARDS_DIR}/{row['name'].replace(' ', '_').lower()}.html"
-        with open(filename, "w", encoding="utf-8") as f:
+    for raw_row in reader:
+        row = clean_keys(raw_row)
+        filename = f"{row['name'].lower().replace(' ', '_')}.html"
+        output_path = os.path.join(output_dir, filename)
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write(template.render(**row))
+        print(f"✅ Generated {output_path}")
