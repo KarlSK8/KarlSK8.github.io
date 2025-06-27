@@ -115,9 +115,11 @@
     <img src="{{ avatar | default('https://i.pravatar.cc/120') }}" alt="Avatar" class="avatar">
     <h1>{{ name }}</h1>
     <div class="subtitle">{{ title }}{% if department %} | {{ department }}{% endif %}</div>
-    {% if company %}<div class="bio">{{ company }}</div>{% endif %}
-    {% if location %}<div class="bio">📍 {{ location }}</div>{% endif %}
+
+    {% if company %}<div class="bio"><strong>{{ company }}</strong></div>{% endif %}
+    {% if location %}<div class="location">📍 {{ location }}</div>{% endif %}
     {% if bio %}<div class="bio">"{{ bio }}"</div>{% endif %}
+
 
     <div class="socials">
       {% if email %}
