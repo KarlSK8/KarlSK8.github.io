@@ -6,10 +6,10 @@ ADR;TYPE=WORK:;;{street};{city};;;{country}
 TEL;TYPE=WORK,VOICE:
 TEL;TYPE=CELL:
 EMAIL;TYPE=WORK,INTERNET:
-URL: +961 70 003 445
+URL:https:/www.lavaleursupermarche.com
 TITLE:Software Engineer
 ROLE:
-X-SOCIALPROFILE;TYPE=linkedin:https://github.com/KarlSK8
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/karlskaff
 ORG:;Tech Department
 CATEGORIES:
 END:VCARD
