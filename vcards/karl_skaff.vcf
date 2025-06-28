@@ -2,10 +2,10 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Karl
 N:Skaff
-ADR;TYPE=WORK:;;{street};{city};;;{country}
+ADR;TYPE=WORK:;;Sassine Square;Achrafieh;;;Lebanon
 TEL;TYPE=WORK,VOICE:
-TEL;TYPE=CELL:
-EMAIL;TYPE=WORK,INTERNET:
+TEL;TYPE=CELL: +961 70 003 445
+EMAIL;TYPE=WORK,INTERNET:karlgskaf@gmail.com
 URL:www.lavaleursupermarche.com
 TITLE:Software Engineer
 ROLE:
