@@ -58,23 +58,12 @@
       {% endif %}
     </div>
     <div class="save-contact">
-    <a href="../vcards/{{ first_name }}_{{ last_name }}" download="{{ first_name }}_{{ last_name }}.vcf" class="save-button">
+    {% set first_name = first_name.lower() %}
+    {% set last_name = last_name.lower() %}
+    <a href="../vcards/{{ first_name }}_{{ last_name }}.vcf" download="{{ first_name }}_{{ last_name }}.vcf" class="save-button">
         Save Contact
   </a>
   </div>
   </div>
-  
-
-  <!-- <script>
-    function toggleTheme() {
-      const isLight = document.body.classList.toggle('light-theme');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-    window.onload = () => {
-      if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-theme');
-      }
-    };
-  </script> -->
 </body>
 </html>
