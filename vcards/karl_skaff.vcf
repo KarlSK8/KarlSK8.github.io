@@ -1,9 +1,11 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Karl Skaff
-ORG: lavaleursupermarche
+FN:Karl
+LN:Skaff
+ORG: La Valeur Supermarché
 TITLE:Software Engineer
 EMAIL;TYPE=INTERNET:karlgskaf@gmail.com
 TEL;TYPE=CELL:+961 70 003 445
 URL:www.lavaleursupermarche.com
+SOCIALPROFILE: https://www.linkedin.com/in/karlskaff/
 END:VCARD
