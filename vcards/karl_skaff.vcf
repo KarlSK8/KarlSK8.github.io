@@ -6,7 +6,7 @@ ADR;TYPE=WORK:;;{street};{city};;;{country}
 TEL;TYPE=WORK,VOICE:
 TEL;TYPE=CELL:
 EMAIL;TYPE=WORK,INTERNET:
-URL:https:/www.lavaleursupermarche.com
+URL:www.lavaleursupermarche.com
 TITLE:Software Engineer
 ROLE:
 X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/karlskaff
