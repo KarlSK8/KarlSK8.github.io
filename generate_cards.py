@@ -17,14 +17,13 @@ with open("cards.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
     for raw_row in reader:
         row = clean_keys(raw_row)
-        filename = f"{row['name'].lower().replace(' ', '_')}.html"
+        filename = f"{row['first_name'].lower()}_{row['last_name'].lower()}.html"
         output_path = os.path.join(output_dir, filename)
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(template.render(**row))
         generated_files.add(filename)
         print(f"✅ Generated {output_path}")
 
-# Delete orphaned files
 for file in os.listdir(output_dir):
     if file.endswith(".html") and file not in generated_files:
         file_path = os.path.join(output_dir, file)

@@ -6,15 +6,15 @@
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://unpkg.com/@-webfont@latest/tabler-icons.min.css">
 
-  <title>{{ name }} | Business Card</title>
+  <title>{{ first_name }} {{ last_name }} | Business Card</title>
 
 </head>
 <body>
 
   <div class="card">
-    <img src="../data/logo.jpg" alt="{{ name }}'s avatar" class="avatar" />
+    <img src="../data/logo.jpg" alt="{{ first_name }} {{ last_name }}'s avatar" class="avatar" />
     
-    <h1>{{ name }}</h1>
+    <h1>{{ first_name }} {{ last_name }}</h1>
 
     <p class="role">{{ title }}{% if department %} | {{ department }}{% endif %}</p>
     <p class="company">La Valeur Supermarché</p>
@@ -58,8 +58,7 @@
       {% endif %}
     </div>
     <div class="save-contact">
-    {% set filename = name.lower().replace(' ', '_') + '.vcf' %}
-    <a href="../vcards/{{ filename }}" download="{{ filename }}.vcf" class="save-button">
+    <a href="../vcards/{{ first_name }}_{{ last_name }}" download="{{ first_name }}_{{ last_name }}.vcf" class="save-button">
         Save Contact
   </a>
   </div>
