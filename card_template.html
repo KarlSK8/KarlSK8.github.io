@@ -10,10 +10,9 @@
 
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
 
   <div class="card">
-    <img src="../data/tab_logo.png" alt="{{ name }}'s avatar" class="avatar" />
+    <img src="../data/logo.jpg" alt="{{ name }}'s avatar" class="avatar" />
     
     <h1>{{ name }}</h1>
 
@@ -59,19 +58,9 @@
       {% endif %}
     </div>
     <div class="save-contact">
-  {% set filename = name.lower().replace(' ', '_') + '.vcf' %}
-  <a href="../vcards/karl_skaff.vcf" download="karl_skaff.vcf">
-    <button style="
-      padding: 10px 20px;
-      font-size: 14px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    ">
-      Save Contact
-    </button>
+    {% set filename = name.lower().replace(' ', '_') + '.vcf' %}
+    <a href="../vcards/{{ filename }}" download="{{ filename }}.vcf" class="save-button">
+        Save Contact
   </a>
   </div>
   </div>

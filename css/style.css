@@ -1,87 +1,79 @@
-/* :root {
-      --bg-color: linear-gradient(135deg, #2c3e50, #3498db);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --text-color: white;
-      --accent-color: #ffce00;
-    } */
+body.light-theme {
+  --bg-color: #f2f2f2;
+  --card-bg: #ffffff;
+  --text-color: #1e1e1e;
+}
 
-    body.light-theme {
-      --bg-color: #f2f2f2;
-      --card-bg: #ffffff;
-      --text-color: #1e1e1e;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
 
-    .theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: transparent;
-      border: 2px solid var(--text-color);
-      color: var(--text-color);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
+.theme-toggle:hover {
+  background: var(--text-color);
+  color: var(--card-bg);
+}
 
-    .theme-toggle:hover {
-      background: var(--text-color);
-      color: var(--card-bg);
-    }
+.card {
+  background: var(--card-bg);
+  padding: 1.6rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 290px; /* reduced from 360px */
+  width: 90%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-    .card {
-      background: var(--card-bg);
-      padding: 1.6rem;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 290px; /* reduced from 360px */
-      width: 90%;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--text-color);
+}
 
+h1 {
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+}
 
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid var(--text-color);
-    }
+.role {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
 
-    h1 {
-      margin: 0.5rem 0;
-      font-size: 1.6rem;
-    }
+.info {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
 
-    .role {
-      font-size: 1rem;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-    }
-
-    .info {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    .socials {
+.socials {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -91,7 +83,7 @@
 }
 
 
-    .social-link {
+.social-link {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -107,36 +99,36 @@
 }
 
 
-    .social-link svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--text-color);
-    }
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+}
 
-    .social-link:hover {
-      transform: scale(1.05);
-      color: var(--accent-color);
-    }
+.social-link:hover {
+  transform: scale(1.05);
+  color: var(--accent-color);
+}
 
-    .social-link:hover svg {
-      fill: var(--accent-color);
-    }
+.social-link:hover svg {
+  fill: var(--accent-color);
+}
 
-    :root {
-  --bg-color: url('https://images.unsplash.com/photo-1503264116251-35a269479413') no-repeat center center fixed;
-  --card-bg: rgba(255, 255, 255, 0.1);
+:root {
+  --bg-color: linear-gradient(135deg, #1943AF, #2a2a40);
+  --card-bg: rgba(255, 255, 255, 0.05);
   --text-color: white;
   --accent-color: #ffce00;
 }
 
 .save-contact {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .save-button {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 10px 20px;
   font-size: 14px;
   background-color: #007BFF;
   color: white;
