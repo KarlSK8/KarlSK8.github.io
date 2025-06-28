@@ -9,6 +9,7 @@ EMAIL;TYPE=WORK,INTERNET:{work_email}
 URL:{website}
 TITLE:{job_title}
 ROLE:{role}
+X-SOCIALPROFILE;TYPE=linkedin:{linkedin}
 ORG:{organization};{department}
 CATEGORIES:{categories}
 END:VCARD
