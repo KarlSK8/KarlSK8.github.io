@@ -1,7 +1,7 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:{first_name}
-N:{last_name}
+FN:{first_name} {last_name}
+N:{last_name};{first_name};{additional_names};{prefix};{suffix}
 ADR;TYPE=WORK:;;{street};{city};;;{country}
 TEL;TYPE=WORK,VOICE:{work_phone}
 TEL;TYPE=CELL:{cell_phone}
