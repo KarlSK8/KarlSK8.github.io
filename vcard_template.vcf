@@ -10,6 +10,6 @@ URL:{website}
 TITLE:{job_title}
 ROLE:{role}
 X-SOCIALPROFILE;TYPE=linkedin:{linkedin}
-ORG:{organization};{department}
+ORG:{company}
 CATEGORIES:{categories}
 END:VCARD

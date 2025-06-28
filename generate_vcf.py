@@ -10,7 +10,7 @@ vcards_dir = "vcards"
 os.makedirs(vcards_dir, exist_ok=True)
 
 # Read CSV and generate vCards
-with open("cards.csv", newline='', encoding="utf-8") as csvfile:
+with open("cards.csv", newline='', encoding="latin") as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         vcard_content = template.format(
@@ -18,6 +18,7 @@ with open("cards.csv", newline='', encoding="utf-8") as csvfile:
             first_name=row.get("first_name", ""),
             last_name=row.get("last_name", ""),
             additional_names=row.get("additional_names", ""),
+            company=row.get("company", ""),
             prefix=row.get("prefix", ""),
             suffix=row.get("suffix", ""),
             nickname=row.get("nickname", ""),
