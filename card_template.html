@@ -24,7 +24,7 @@
         <a class="social-link" href="#">
           <img src="../data/location.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
           <span>
-            {{ location }}{% if branch %}, {{ branch }}{% endif %}
+            {{ street }}{% if city %}, {{ city }}{% endif %}{% if country %}, {{ country }}{% endif %}
           </span>
         </a>
       {% endif %}

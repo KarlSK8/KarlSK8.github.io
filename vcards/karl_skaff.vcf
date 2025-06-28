@@ -2,14 +2,14 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Karl
 N:Skaff
-ADR;TYPE=WORK:Achrafieh
+ADR;TYPE=WORK:;;{street};{city};;;{country}
 TEL;TYPE=WORK,VOICE:
 TEL;TYPE=CELL:
 EMAIL;TYPE=WORK,INTERNET:
-URL:www.lavaleursupermarche.com
+URL: +961 70 003 445
 TITLE:Software Engineer
 ROLE:
-X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/karlskaff
+X-SOCIALPROFILE;TYPE=linkedin:https://github.com/KarlSK8
 ORG:;Tech Department
 CATEGORIES:
 END:VCARD
