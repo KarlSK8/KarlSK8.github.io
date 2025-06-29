@@ -29,6 +29,13 @@
         </a>
       {% endif %}
 
+      {% if cell_phone %}
+        <a class="social-link" href="tel:{{ work_phone }}">
+          <img src="../data/work_phone.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
+          <span>{{ work_phone }}</span>
+        </a>
+      {% endif %}
+
       {% if work_email %}
         <a class="social-link" href="mailto:{{ work_email }}">
           <img src="../data/mail.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
