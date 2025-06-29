@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/links_style.css">
+  <link href="https://unpkg.com/@-webfont@latest/tabler-icons.min.css">
+
+  <title>La Valeur Supermarch�</title>
+
+</head>
+<body>
+
+  <div class="card">
+    <img src="../data/logo.jpg" alt="Karl Skaff's avatar" class="avatar" />
+    
+    <h1>La Valeur Supermarch� Connections</h1>
+
+    <p class="role"> Fresh products across lebanon </p>
+
+    <div class="socials">
+      
+        <a class="social-link" href="https://linkedin.com/in/karlskaff" target="_blank">
+          <img src="../data/linkedin.png" alt="LinkedIn icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+        </a>
+      
+
+      
+
+      
+        <a class="social-link" href="instagram" target="_blank">
+          <img src="../data/instagram.png" alt="Instagram icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+        </a>
+      
+
+      
+        <a class="social-link" href="Facebook" target="_blank">
+          <img src="../data/facebook.png" alt="Facebook icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+        </a>
+      
+
+    </div>
+    <div class="entries"> 
+  
+    <a class="entries-link" href="https://www.lavaleursupermarche.com" target="_blank">
+      <img src="../data/world-wide-web.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+      <span>La Valeur Online Grocery</span>
+    </a>
+  
+  
+  
+
+  
+    <a class="entries-link" href="https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
+      <img src="../data/location.png" alt="Location icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+      <span> Our Locations </span>
+    </a>
+  
+
+  <div class="dropdown-wrapper">
+
+  <div class="dropdown" id="websiteDropdown">
+    <button class="dropdown-toggle" onclick="toggleDropdown()">
+      <img src="../data/promotions.png" alt="Promotions icon" width="20" height="20">
+      <span>More Links</span>
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="https://www.lavaleursupermarche.com" target="_blank">Home</a>
+      <a href="https://www.lavaleursupermarche.com/promotions" target="_blank">Promotions</a>
+      <a href="https://www.lavaleursupermarche.com/contact" target="_blank">Contact</a>
+    </div>
+  </div>
+  </div>
+
+  
+    <a class="entries-link" href="tel:+961 1 216 030">
+      <img src="../data/work_phone.png" alt="Work phone icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+      <span>+961 1 216 030</span>
+    </a>
+  
+
+  
+    <a class="entries-link" href="mailto:karlgskaf@gmail.com">
+      <img src="../data/mail.png" alt="Work email icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+      <span>karlgskaf@gmail.com</span>
+    </a>
+  
+
+  
+    <a class="entries-link" href="tel:+961 70 003 445">
+      <img src="../data/phone.png" alt="Cell phone icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
+      <span>+961 70 003 445</span>
+    </a>
+  
+  
+</div>
+
+  </div>
+  <script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("show");
+  }
+
+  window.addEventListener("click", function(e) {
+    const dropdown = document.getElementById("websiteDropdown");
+    const menu = document.getElementById("dropdownMenu");
+    if (!dropdown.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>
