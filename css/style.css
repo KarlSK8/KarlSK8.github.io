@@ -1,7 +1,8 @@
-body.light-theme {
-  --bg-color: #f2f2f2;
-  --card-bg: #ffffff;
-  --text-color: #1e1e1e;
+:root {
+  --bg-color: linear-gradient(135deg, #1943AF, #2a2a40);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-color: white;
+  --accent-color: #ffce00;
 }
 
 body {
@@ -16,35 +17,15 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: 2px solid var(--text-color);
-  color: var(--text-color);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: var(--text-color);
-  color: var(--card-bg);
-}
-
 .card {
   background: var(--card-bg);
   padding: 1.6rem;
   border-radius: 20px;
   text-align: center;
-  max-width: 290px; /* reduced from 360px */
+  max-width: 290px;
   width: 90%;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .avatar {
@@ -82,7 +63,6 @@ h1 {
   padding-left: 0.4rem;
 }
 
-
 .social-link {
   display: flex;
   align-items: center;
@@ -93,32 +73,13 @@ h1 {
   transition: transform 0.2s, color 0.2s;
 }
 
-.social-link i {
-  font-size: 18px;
-  color: var(--text-color);
-}
-
-
-.social-link svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--text-color);
-}
-
 .social-link:hover {
   transform: scale(1.05);
   color: var(--accent-color);
 }
 
-.social-link:hover svg {
-  fill: var(--accent-color);
-}
-
-:root {
-  --bg-color: linear-gradient(135deg, #1943AF, #2a2a40);
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --text-color: white;
-  --accent-color: #ffce00;
+.social-link img {
+  filter: brightness(0) invert(1);
 }
 
 .save-contact {
@@ -127,18 +88,22 @@ h1 {
 }
 
 .save-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 14px;
-  background-color: #007BFF;
+  display: inline-flex;
+  align-items: center;
+  background-color: #0078D4;
   color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
 .save-button:hover {
-  background-color: #0056b3;
+  background-color: #005a9e;
+}
+
+.save-button img {
+  filter: brightness(0) invert(1);
 }

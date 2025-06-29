@@ -1,15 +1,12 @@
 import csv
 import os
 
-# Load the vCard template
-with open("vcard_template.vcf", "r", encoding="utf-8") as template_file:
+with open("templates/vcard_template.vcf", "r", encoding="utf-8") as template_file:
     template = template_file.read()
 
-# Create output directory
 vcards_dir = "vcards"
 os.makedirs(vcards_dir, exist_ok=True)
 
-# Read CSV and generate vCards
 with open("cards.csv", newline='', encoding="latin") as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -46,10 +43,16 @@ with open("cards.csv", newline='', encoding="latin") as csvfile:
             skype=row.get("skype", "")
         )
 
-        # Save the vCard
+        generated_cards = set()
         filename = f"{row.get('first_name', '').lower()}_{row.get('last_name', '').lower()}.vcf"
         filepath = os.path.join(vcards_dir, filename)
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(vcard_content)
-
+            generated_cards.add(filename)
         print(f"✅ Created vCard: {filepath}")
+
+for file in os.listdir(vcards_dir):
+    if file.endswith(".vcf") and file not in generated_cards:
+        file_path = os.path.join(vcards_dir, file)
+        os.remove(file_path)
+        print(f"🗑️ Deleted orphaned vCard: {file_path}")

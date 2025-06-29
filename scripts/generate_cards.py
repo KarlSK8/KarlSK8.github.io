@@ -6,7 +6,7 @@ output_dir = "cards"
 os.makedirs(output_dir, exist_ok=True)
 
 env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template("card_template.html")
+template = env.get_template("templates/card_template.html")
 
 def clean_keys(row):
     return {str(k).strip(): str(v).strip() for k, v in row.items() if k}
