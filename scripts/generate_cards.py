@@ -13,7 +13,7 @@ def clean_keys(row):
 
 generated_files = set()
 
-with open("cards.csv", newline='', encoding="latin") as csvfile:
+with open("cards.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
     for raw_row in reader:
         row = clean_keys(raw_row)

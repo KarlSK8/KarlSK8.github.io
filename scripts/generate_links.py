@@ -13,13 +13,13 @@ def clean_keys(row):
 
 generated_files = set()
 
-with open("links.csv", newline='', encoding="latin") as csvfile:
+with open("links.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
     for raw_row in reader:
         row = clean_keys(raw_row)
         filename = f"links.html"
         output_path = os.path.join(output_dir, filename)
-        with open(output_path, "w", encoding="latin") as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write(template.render(**row))
         generated_files.add(filename)
         print(f"✅ Generated {output_path}")
