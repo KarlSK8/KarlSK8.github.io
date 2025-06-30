@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://unpkg.com/@-webfont@latest/tabler-icons.min.css">
 
-  <title>{{ first_name }} {{ last_name }} | Business Card</title>
+<title>
+  {{ first_name }} {% if middle_name %} {{ middle_name }} {% endif %} {{ last_name }} | Business Card
+</title>
 
 </head>
 <body>
@@ -14,25 +16,28 @@
   <div class="card">
     <img src="../data/logo.jpg" alt="{{ first_name }} {{ last_name }}'s avatar" class="avatar" />
     
-    <h1>{{ first_name }} {{ last_name }}</h1>
+    <h1>{{ first_name }} {% if middle_name %} {{ middle_name }} {% endif %} {{ last_name }}</h1>
 
-    <p class="role">{{ job_title }}{% if department %} | {{ department }}{% endif %}</p>
+    <h2 class="role">{{ job_title }}{% if department %} | {{ department }}{% endif %}</h2>
     <p class="company">{{company}}</p>
 
     <div class="socials">
-      {% if city or street or country %}
+      {% if city or street or country or location %}
         <a class="social-link" href="https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
-          <img src="../data/location.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
-          <span>
-            {{ street }}{% if city %}, {{ city }}{% endif %}{% if country %}, {{ country }}{% endif %}
-          </span>
+          <div class="icon-wrapper">
+            <img src="../data/location.png" alt="Location icon">
+          </div>
+          <div class="text-wrapper">
+            {% if location %}{{ location }} {% endif %}
+            {% if street %}{{ street }}{% endif %}{% if city %}, {{ city }}{% endif %}{% if country %}, {{ country }}{% endif %}
+          </div>
         </a>
       {% endif %}
 
       {% if cell_phone %}
         <a class="social-link" href="tel:{{ work_phone }}">
           <img src="../data/work_phone.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
-          <span>{{ work_phone }}</span>
+            <span>{{ work_phone }}{% if extension %} ext. {{ extension }}{% endif %}</span>
         </a>
       {% endif %}
 

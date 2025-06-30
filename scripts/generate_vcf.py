@@ -7,6 +7,8 @@ with open("templates/vcard_template.vcf", "r", encoding="utf-8") as template_fil
 vcards_dir = "vcards"
 os.makedirs(vcards_dir, exist_ok=True)
 
+generated_cards = set()  # Moved outside the loop to persist
+
 with open("cards.csv", newline='', encoding="latin") as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -19,6 +21,7 @@ with open("cards.csv", newline='', encoding="latin") as csvfile:
             prefix=row.get("prefix", ""),
             suffix=row.get("suffix", ""),
             nickname=row.get("nickname", ""),
+            location=row.get("location", ""),
             street=row.get("street", ""),
             city=row.get("city", ""),
             country=row.get("country", ""),
@@ -43,14 +46,15 @@ with open("cards.csv", newline='', encoding="latin") as csvfile:
             skype=row.get("skype", "")
         )
 
-        generated_cards = set()
         filename = f"{row.get('first_name', '').lower()}_{row.get('last_name', '').lower()}.vcf"
         filepath = os.path.join(vcards_dir, filename)
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(vcard_content)
-            generated_cards.add(filename)
+
+        generated_cards.add(filename)
         print(f"✅ Created vCard: {filepath}")
 
+# Cleanup: remove old .vcf files not in the current CSV
 for file in os.listdir(vcards_dir):
     if file.endswith(".vcf") and file not in generated_cards:
         file_path = os.path.join(vcards_dir, file)

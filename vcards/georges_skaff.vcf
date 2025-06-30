@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Georges Skaff
+N:Skaff;Georges;;;
+ADR;TYPE=WORK:;;;;;;
+TEL;TYPE=WORK,VOICE: +961 1 216 030
+TEL;TYPE=CELL: +961 70 822 868
+EMAIL;TYPE=WORK,INTERNET:gkskaff@lavaleur.net
+URL:www.lavaleursupermarche.com
+TITLE:General Manager
+ROLE:
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/george-skaff-mba-a4414729/
+ORG:La Valeur SupermarchÃ©
+CATEGORIES:
+END:VCARD
