@@ -212,16 +212,31 @@ h1 {
   padding: 0.5rem 0;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   width: 100%;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.3s ease, opacity 0.3s ease;
   pointer-events: none;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
+/* When dropdown is shown */
 .dropdown-menu.show {
+  max-height: 180px; /* limit height */
+  overflow-y: auto;  /* enable vertical scroll */
   opacity: 1;
   transform: scaleY(1);
   pointer-events: auto;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
