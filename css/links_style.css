@@ -68,17 +68,18 @@ h1 {
 .entries-link {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   text-decoration: none;
   color: var(--text-color);
-  font-size: 0.9rem;
-  padding: 0.5rem 0.8rem;
+  font-size: 1rem; /* Increased from 0.9rem */
+  padding: 0.8rem 1.2rem; /* Increased padding */
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  border-radius: 14px; /* Slightly larger corners */
   width: 100%;
   box-sizing: border-box;
   transition: background 0.3s ease, transform 0.2s, color 0.2s;
 }
+
 
 .entries-link:hover {
   transform: scale(1.05);
@@ -103,17 +104,32 @@ h1 {
 .dropdown-toggle {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0.8rem;
+  gap: 0.8rem;
+  padding: 0.8rem 1.2rem;
   background: rgba(255, 255, 255, 0.08);
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   color: var(--text-color);
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
   text-align: left;
+  transition: background 0.3s ease, transform 0.2s, color 0.2s;
+}
+
+.entries-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem; /* Increased from 0.9rem */
+  padding: 0.8rem 1.2rem; /* Increased padding */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px; /* Slightly larger corners */
+  width: 100%;
+  box-sizing: border-box;
   transition: background 0.3s ease, transform 0.2s, color 0.2s;
 }
 
@@ -126,8 +142,6 @@ h1 {
   color: var(--accent-color);
   background: rgba(255, 255, 255, 0.12);
 }
-
-
 
 
 /* Dropdown menu (smooth expand with max-height transition) */
@@ -147,13 +161,6 @@ h1 {
   box-sizing: border-box;
   pointer-events: none; /* prevent interaction when hidden */
   user-select: none;
-}
-
-.dropdown-menu.show {
-  max-height: 300px; /* enough height for all links */
-  opacity: 1;
-  pointer-events: auto;
-  user-select: auto;
 }
 
 .dropdown-menu a {
