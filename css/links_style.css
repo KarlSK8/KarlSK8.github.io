@@ -71,10 +71,13 @@ h1 {
   gap: 0.8rem;
   text-decoration: none;
   color: var(--text-color);
-  font-size: 1rem; /* Increased from 0.9rem */
-  padding: 0.8rem 1.2rem; /* Increased padding */
+  font-size: 1rem;
+  /* Increased from 0.9rem */
+  padding: 0.8rem 1.2rem;
+  /* Increased padding */
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 14px; /* Slightly larger corners */
+  border-radius: 14px;
+  /* Slightly larger corners */
   width: 100%;
   box-sizing: border-box;
   transition: background 0.3s ease, transform 0.2s, color 0.2s;
@@ -124,10 +127,13 @@ h1 {
   gap: 0.8rem;
   text-decoration: none;
   color: var(--text-color);
-  font-size: 1rem; /* Increased from 0.9rem */
-  padding: 0.8rem 1.2rem; /* Increased padding */
+  font-size: 1rem;
+  /* Increased from 0.9rem */
+  padding: 0.8rem 1.2rem;
+  /* Increased padding */
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 14px; /* Slightly larger corners */
+  border-radius: 14px;
+  /* Slightly larger corners */
   width: 100%;
   box-sizing: border-box;
   transition: background 0.3s ease, transform 0.2s, color 0.2s;
@@ -148,7 +154,8 @@ h1 {
 .dropdown-menu {
   display: flex;
   flex-direction: column;
-  background-color: rgba(25, 35, 75, 0.95); /* dark bluish with opacity */
+  background-color: rgba(25, 35, 75, 0.95);
+  /* dark bluish with opacity */
   border-radius: 12px;
   margin-top: 0.6rem;
   padding: 0.5rem 0;
@@ -159,7 +166,8 @@ h1 {
   opacity: 0;
   transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
   box-sizing: border-box;
-  pointer-events: none; /* prevent interaction when hidden */
+  pointer-events: none;
+  /* prevent interaction when hidden */
   user-select: none;
 }
 
@@ -232,8 +240,10 @@ h1 {
 
 /* When dropdown is shown */
 .dropdown-menu.show {
-  max-height: 180px; /* limit height */
-  overflow-y: auto;  /* enable vertical scroll */
+  max-height: 180px;
+  /* limit height */
+  overflow-y: auto;
+  /* enable vertical scroll */
   opacity: 1;
   transform: scaleY(1);
   pointer-events: auto;
@@ -247,3 +257,146 @@ h1 {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
+
+/* Promotions dropdown toggle styling like FAQ */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  color: var(--text-color);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s, color 0.2s;
+}
+
+.dropdown-toggle::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.dropdown.show .dropdown-toggle::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown.show .dropdown-menu {
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto;
+  max-height: 300px;
+}
+
+
+.dropdown-toggle:hover {
+  transform: scale(1.05);
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Promotion link consistency with FAQ answers */
+.dropdown-menu a {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0.2rem 0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+
+.faq-wrapper {
+  margin-top: 0.8rem;
+}
+
+.faq-menu {
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item {
+  margin-bottom: 0.2rem;
+  padding-bottom: 0rem;
+  border: none;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: background 0.3s ease, transform 0.2s, color 0.2s;
+  position: relative; /* Add this to position the arrow correctly */
+}
+.faq-question:hover {
+  transform: scale(1.05);
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.faq-question:hover::after {
+  color: var(--accent-color);
+}
+
+.faq-item.active .faq-question {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--accent-color);
+}
+
+
+
+/* FAQ arrow transition */
+.faq-question::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Rotate arrow on active */
+.faq-item.active .faq-question::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 0.4rem;
+  padding: 0 1.2rem;
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  transition: max-height 0.4s ease, padding 0.4s ease, margin-bottom 0.4s ease;
+  margin-bottom: 0; /* start closed with no bottom space */
+}
+
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 0.8rem; /* add consistent space after answer */
+}
+
+
