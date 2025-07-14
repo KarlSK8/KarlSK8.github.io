@@ -1,0 +1,31 @@
+{
+  "first_name": "La Valeur",
+  "last_name": "La Valeur",
+  "company": "La Valeur Supermarche",
+  "bio": "Building smart connections around the world.",
+  "avatar_path": "../data/logo.jpg",
+  "social_links": {
+    "instagram": "https://instagram.com/lavaleursupermarche",
+    "facebook": "https://www.facebook.com/LaValeurSupermarket",
+    "linkedin": "https://www.linkedin.com/company/la-valeur-supermarch%C3%A9/"
+  },
+  "website_link": "https://lavaleursupermarche.com",
+  "website_phrase": "Visit Our Website",
+  "app_link": "https://bit.ly/34VmBqx",
+  "app_phrase": "Download Our App",
+  "promotions": [
+    {"name": "Achrafieh Promotions", "link": "https://lavaleursupermarche.com/shop/stores/131/Achrafieh/section/1/Promotions"},
+    {"name": "Ajaltoun Promotions", "link": "https://lavaleursupermarche.com/shop/stores/4/Ajaltoun/section/1/Promotions"},
+    {"name": "Beit el Kikko Promotions", "link": "https://lavaleursupermarche.com/shop/stores/3/Bet%20el%20Kikko/section/1/Promotions"},
+    {"name": "Mazraat Yachouh Promotions", "link": "https://lavaleursupermarche.com/shop/stores/2/Mazraat%20Yachouh/section/1/Promotions"},
+    {"name": "Zalka Promotions", "link": "https://lavaleursupermarche.com/shop/stores/5/Zalka/section/1/Promotions"}
+  ],
+  "faqs": [
+    {"question": "Where are your stores?", "answer": "You can find our stores <a class='unstyled' href='https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D'>here</a>."},
+    {"question": "What are your opening hours?", "answer": "Our Achrafieh branch is open daily from 8:00 AM to 10:00 PM, while all other branches operate until 9:00 PM."}
+  ],
+  "location": "Our Locations",
+  "location_link": "https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+  "work_phone": "",
+  "work_email": "customerservice@lavaleur.net"
+}

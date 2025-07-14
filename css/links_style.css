@@ -12,10 +12,13 @@ body {
   color: var(--text-color);
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 32px 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-y: auto;
 }
+
 
 .card {
   background: var(--card-bg);
@@ -399,4 +402,9 @@ h1 {
   margin-bottom: 0.8rem; /* add consistent space after answer */
 }
 
-
+.faq-answer a.unstyled {
+  all: unset;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+}
