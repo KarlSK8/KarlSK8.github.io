@@ -4,7 +4,7 @@ import json
 import os
 
 # Load data
-with open('data.json', 'r') as f:
+with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 # Set up Jinja2 environment
