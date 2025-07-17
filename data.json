@@ -1,13 +1,14 @@
 {
   "first_name": "La Valeur",
   "last_name": "La Valeur",
-  "company": "La Valeur Supermarche",
+  "company": "La Valeur Supermarché",
   "bio": "🛒 Fresh & quality products across Lebanon!",
   "avatar_path": "../data/logo.jpg",
   "social_links": {
     "instagram": "https://instagram.com/lavaleursupermarche",
     "facebook": "https://www.facebook.com/LaValeurSupermarket",
-    "linkedin": "https://www.linkedin.com/company/la-valeur-supermarch%C3%A9/"
+    "linkedin": "https://www.linkedin.com/company/la-valeur-supermarch%C3%A9/",
+    "whatsapp": "https://wa.link/kqohya"
   },
   "website_link": "https://lavaleursupermarche.com",
   "website_phrase": "Visit Our Website",
@@ -22,7 +23,8 @@
   ],
   "faqs": [
     {"question": "Where are your stores?", "answer": "You can find our stores <a class='unstyled' href='https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D'>here</a>."},
-    {"question": "What are your opening hours?", "answer": "Our Achrafieh branch is open daily from 8:00 AM to 10:00 PM, while all other branches operate until 9:00 PM."}
+    {"question": "What are your opening hours?", "answer": "Our Achrafieh branch is open daily from 8:00 AM to 10:00 PM, while all other branches operate until 9:00 PM."},
+    {"question": "Do you have a loyalty program?", "answer": "Every time you shop at any La Valeur Supermarché branch, you earn points on your purchases. These points are fully redeemable for cashback, which you can use toward any future purchase at any of our branches. Joining is easy: just download our mobile app and apply through it to become a loyalty member."}
   ],
   "location": "Our Locations",
   "location_link": "https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
