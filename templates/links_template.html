@@ -1,117 +1,140 @@
+<!-- template.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/links_style.css">
-  <link href="https://unpkg.com/@-webfont@latest/tabler-icons.min.css">
-
   <title>{{ company }}</title>
-
 </head>
 <body>
-
   <div class="card">
-    <img src="../data/logo.jpg" alt="{{ first_name }} {{ last_name }}'s avatar" class="avatar" />
-    
+    {% if website_link %}
+      <a href="{{ website_link }}" target="_blank" class="avatar-link" aria-label="{{ company }} website">
+        <img src="{{ avatar_path }}" alt="{{ company }} logo" class="avatar" />
+      </a>
+      {% else %}
+      <img src="{{ avatar_path }}" alt="{{ company }} logo" class="avatar" />
+    {% endif %}
     <h1>{{ company }} Connections</h1>
-
-    <p class="role">{% if bio %} {{ bio }} {% endif %}</p>
+    <p class="role">{{ bio }}</p>
 
     <div class="socials">
-      {% if instagram %}
-        <a class="social-link" href="{{ instagram }}" target="_blank">
-          <img src="../data/instagram.png" alt="Instagram icon" width="27" height="27" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-        </a>
-      {% endif %}
-
-      {% if facebook %}
-        <a class="social-link" href="{{ facebook }}" target="_blank">
-          <img src="../data/facebook.png" alt="Facebook icon" width="26" height="26" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-        </a>
-      {% endif %}
-
-      {% if whatsapp %}
-        <a class="social-link" href="{{ whatsapp }}" target="_blank">
-          <img src="../data/whatsapp.png" alt="Whatsapp icon" width="27" height="27" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-        </a>
-      {% endif %}
-
-      {% if linkedin %}
-        <a class="social-link" href="{{ linkedin }}" target="_blank">
-          <img src="../data/linkedin.png" alt="LinkedIn icon" width="26" height="26" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-        </a>
-      {% endif %}
-
+      {% for platform, url in social_links.items() %}
+      <a class="social-link" href="{{ url }}" target="_blank">
+        <img src="../data/{{ platform }}.png" alt="{{ platform }} icon" width="27" height="27">
+      </a>
+      {% endfor %}
     </div>
-    <div class="entries"> 
-  {% if website_link %}
-    <a class="entries-link" href="https://{{ website_link }}" target="_blank">
-      <img src="../data/world-wide-web.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-      <span>{{ website_phrase }}</span>
-    </a>
-  {% endif %}
-  
-  {% if app_link %}
-    <a class="entries-link" href="https://{{ app_link }}" target="_blank">
-      <img src="../data/mobile_app.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-      <span>{{ app_phrase }}</span>
-    </a>
-  {% endif %}
-  
-  <div class="dropdown-wrapper">
-    <div class="dropdown" id="websiteDropdown">
-      <button class="dropdown-toggle" onclick="toggleDropdown()">
-        <img src="../data/promotions.png" alt="Promotions icon" width="20" height="20">
-        <span>Our Promotions</span>
-      </button>
-      <div class="dropdown-menu" id="dropdownMenu">
-        <a href="https://lavaleursupermarche.com/shop/stores/131/Achrafieh/section/1/Promotions" target="_blank">Achrafieh Promotions</a>
-        <a href="https://lavaleursupermarche.com/shop/stores/4/Ajaltoun/section/1/Promotions" target="_blank">Ajaltoun Promotions</a>
-        <a href="https://lavaleursupermarche.com/shop/stores/3/Bet%20el%20Kikko/section/1/Promotions" target="_blank">Beit el Kikko Promotions</a>
-        <a href="https://lavaleursupermarche.com/shop/stores/2/Mazraat%20Yachouh/section/1/Promotions" target="_blank">Mazraat Yachouh Promotions</a>
-        <a href="https://lavaleursupermarche.com/shop/stores/5/Zalka/section/1/Promotions" target="_blank">Zalka Promotions</a>
+
+    <div class="entries">
+      {% if website_link %}
+      <a class="entries-link" href="{{ website_link }}" target="_blank">
+        <img src="../data/world-wide-web.png" alt="Website" width="20" height="20">
+        <span>{{ website_phrase }}</span>
+      </a>
+      {% endif %}
+
+      {% if app_link %}
+      <a class="entries-link" href="{{ app_link }}" target="_blank">
+        <img src="../data/mobile_app.png" alt="App" width="20" height="20">
+        <span>{{ app_phrase }}</span>
+      </a>
+      {% endif %}
+
+      {% if promotions %}
+      <div class="dropdown" id="websiteDropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown()">
+          <img src="../data/promotions.png" alt="Promotions" width="20" height="20">
+          <span>Our Promotions</span>
+        </button>
+        <div class="dropdown-menu faq-menu" id="dropdownMenu">
+          {% for promo in promotions %}
+          <a href="{{ promo.link }}" target="_blank">{{ promo.name }}</a>
+          {% endfor %}
+        </div>
       </div>
+      {% endif %}
+
+      {% if faqs %}
+      <div class="dropdown" id="faqDropdown">
+        <button class="dropdown-toggle" onclick="toggleFAQDropdown()">
+          <img src="../data/faq.png" alt="FAQ" width="20" height="20">
+          <span>Frequently Asked Questions</span>
+        </button>
+        <div class="dropdown-menu faq-menu" id="faqMenu">
+          {% for faq in faqs %}
+          <div class="faq-item">
+            <div class="faq-question faq-menu" onclick="toggleAnswer(this)">{{ faq.question }}</div>
+            <div class="faq-answer">{{ faq.answer }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if location %}
+      <a class="entries-link" href="{{ location_link }}">
+        <img src="../data/location.png" alt="Location" width="20" height="20">
+        <span>{{ location }}</span>
+      </a>
+      {% endif %}
+
+      {% if work_phone %}
+      <a class="entries-link" href="tel:{{ work_phone }}">
+        <img src="../data/work_phone.png" alt="Phone" width="20" height="20">
+        <span>{{ work_phone }}</span>
+      </a>
+      {% endif %}
+
+      {% if work_email %}
+      <a class="entries-link" href="mailto:{{ work_email }}">
+        <img src="../data/mail.png" alt="Email" width="20" height="20">
+        <span>{{ work_email }}</span>
+      </a>
+      {% endif %}
     </div>
   </div>
 
-  {% if location %}
-    <a class="entries-link" href="{{location_link}}">
-      <img src="../data/location.png" alt="Location icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-      <span>{{ location }}</span>
-    </a>
-  {% endif %}
-
-  {% if cell_phone %}
-    <a class="entries-link" href="tel:{{ work_phone }}">
-      <img src="../data/work_phone.png" alt="Work phone icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-      <span>{{ work_phone }}</span>
-    </a>
-  {% endif %}
-
-  {% if work_email %}
-    <a class="entries-link" href="mailto:{{ work_email }}">
-      <img src="../data/mail.png" alt="Work email icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px; filter: brightness(0) invert(1);">
-      <span>{{ work_email }}</span>
-    </a>
-  {% endif %}
-  
-</div>
-
-  </div>
   <script>
-  function toggleDropdown() {
-    const menu = document.getElementById("dropdownMenu");
-    menu.classList.toggle("show");
-  }
-
-  window.addEventListener("click", function(e) {
-    const dropdown = document.getElementById("websiteDropdown");
-    const menu = document.getElementById("dropdownMenu");
-    if (!dropdown.contains(e.target)) {
-      menu.classList.remove("show");
+    function toggleDropdown() {
+      const promoMenu = document.getElementById("dropdownMenu");
+      const faqMenu = document.getElementById("faqMenu");
+      if (faqMenu) faqMenu.classList.remove("show");
+      promoMenu.classList.toggle("show");
     }
-  });
-</script>
+
+    function toggleFAQDropdown() {
+      const promoMenu = document.getElementById("dropdownMenu");
+      const faqMenu = document.getElementById("faqMenu");
+      if (promoMenu) promoMenu.classList.remove("show");
+      faqMenu.classList.toggle("show");
+    }
+
+    function toggleAnswer(clicked) {
+      const allItems = document.querySelectorAll('.faq-item');
+      const parent = clicked.parentElement;
+      allItems.forEach(item => item !== parent && item.classList.remove('active'));
+      parent.classList.toggle('active');
+    }
+
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        document.getElementById("dropdownMenu")?.classList.remove("show");
+        document.getElementById("faqMenu")?.classList.remove("show");
+      }
+    });
+
+    window.addEventListener("click", function (e) {
+      const promoDropdown = document.getElementById("websiteDropdown");
+      const faqDropdown = document.getElementById("faqDropdown");
+      if (!promoDropdown.contains(e.target)) {
+        document.getElementById("dropdownMenu").classList.remove("show");
+      }
+      if (!faqDropdown.contains(e.target)) {
+        document.getElementById("faqMenu").classList.remove("show");
+      }
+    });
+  </script>
 </body>
 </html>
