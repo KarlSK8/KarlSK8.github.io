@@ -5,8 +5,12 @@ from jinja2 import Environment, FileSystemLoader
 output_dir = "cards"
 os.makedirs(output_dir, exist_ok=True)
 
-env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template("templates/card_template.html")
+env = Environment(
+    loader=FileSystemLoader("templates"),
+    trim_blocks=True,
+    lstrip_blocks=True,
+)
+template = env.get_template("card_template.html")
 
 def clean_keys(row):
     return {str(k).strip(): str(v).strip() for k, v in row.items() if k}
@@ -22,10 +26,10 @@ with open("cards.csv", newline='', encoding="utf-8") as csvfile:
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(template.render(**row))
         generated_files.add(filename)
-        print(f"✅ Generated {output_path}")
+        print(f"Generated {output_path}")
 
 for file in os.listdir(output_dir):
     if file.endswith(".html") and file not in generated_files:
         file_path = os.path.join(output_dir, file)
         os.remove(file_path)
-        print(f"🗑️ Deleted orphaned file: {file_path}")
+        print(f"Deleted orphaned file: {file_path}")

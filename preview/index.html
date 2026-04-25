@@ -5,47 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Cards Preview</title>
   <style>
+    :root {
+      --bg: #f3f5f8;
+      --text: #101828;
+      --muted: #667085;
+      --surface: #ffffff;
+      --border: #d0d5dd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      padding: 2rem;
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
     }
+
+    main {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 32px 18px;
+    }
+
+    header {
+      margin-bottom: 22px;
+    }
+
     h1 {
-      text-align: center;
-      margin-bottom: 2rem;
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.2;
     }
+
+    p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 18px;
+      align-items: start;
     }
-    .card-frame {
-      background: white;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    .preview-frame {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
     }
+
+    .preview-frame h2 {
+      margin: 0;
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      line-height: 1.2;
+      border-bottom: 1px solid var(--border);
+    }
+
     iframe {
+      display: block;
       width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
+      height: 680px;
+      border: 0;
+      background: white;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding: 18px 12px;
+      }
+
+      iframe {
+        height: 720px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Digital Cards Preview</h1>
-  <div class="grid">
-    <div class="card-frame">
-      <iframe src="../cards/karl_skaff.html"></iframe>
+  <main>
+    <header>
+      <h1>Digital Cards Preview</h1>
+      <p>Generated Linktree and business card pages.</p>
+    </header>
+
+    <div class="grid">
+      <section class="preview-frame">
+        <h2>La Valeur Links</h2>
+        <iframe src="../links/lavaleur.html" title="La Valeur Linktree"></iframe>
+      </section>
+
+      <section class="preview-frame">
+        <h2>Karl Skaff</h2>
+        <iframe src="../cards/karl_skaff.html" title="Karl Skaff business card"></iframe>
+      </section>
+
+      <section class="preview-frame">
+        <h2>Georges Skaff</h2>
+        <iframe src="../cards/georges_skaff.html" title="Georges Skaff business card"></iframe>
+      </section>
     </div>
-    <div class="card-frame">
-      <iframe src="../cards/karl_skaff.html"></iframe>
-    </div>
-    <div class="card-frame">
-      <iframe src="../cards/karl_skaff.html"></iframe>
-    </div>
-    <!-- Add more iframes here for other users -->
-  </div>
+  </main>
 </body>
 </html>

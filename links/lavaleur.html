@@ -1,4 +1,3 @@
-<!-- template.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,155 +7,149 @@
   <title>La Valeur Supermarché</title>
 </head>
 <body>
-  <div class="card">
-    
-      <a href="https://lavaleursupermarche.com" target="_blank" class="avatar-link" aria-label="La Valeur Supermarché website">
-        <img src="../data/logo.jpg" alt="La Valeur Supermarché logo" class="avatar" />
-      </a>
-      
-    <h1>La Valeur Supermarché Connections</h1>
-    <p class="role">🛒 Fresh & quality products across Lebanon!</p>
+  <main class="page-shell">
+    <section class="card" aria-label="La Valeur Supermarché links">
+      <header class="profile">
+        <a href="https://lavaleursupermarche.com" target="_blank" rel="noopener noreferrer" class="avatar-link" aria-label="La Valeur Supermarché website">
+          <img src="../data/logo.jpg" alt="La Valeur Supermarché logo" class="avatar" />
+        </a>
 
-    <div class="socials">
-      
-      <a class="social-link" href="https://instagram.com/lavaleursupermarche" target="_blank">
-        <img src="../data/instagram.png" alt="instagram icon" width="27" height="27">
-      </a>
-      
-      <a class="social-link" href="https://www.facebook.com/LaValeurSupermarket" target="_blank">
-        <img src="../data/facebook.png" alt="facebook icon" width="27" height="27">
-      </a>
-      
-      <a class="social-link" href="https://www.linkedin.com/company/la-valeur-supermarch%C3%A9/" target="_blank">
-        <img src="../data/linkedin.png" alt="linkedin icon" width="27" height="27">
-      </a>
-      
-      <a class="social-link" href="https://wa.link/kqohya" target="_blank">
-        <img src="../data/whatsapp.png" alt="whatsapp icon" width="27" height="27">
-      </a>
-      
-    </div>
+        <h1>La Valeur Supermarché Connections</h1>
+        <p class="role">🛒 Fresh & quality products across Lebanon!</p>
 
-    <div class="entries">
-      
-      <a class="entries-link" href="https://lavaleursupermarche.com" target="_blank">
-        <img src="../data/world-wide-web.png" alt="Website" width="20" height="20">
-        <span>Visit Our Website</span>
-      </a>
-      
+        <nav class="socials" aria-label="Social profiles">
+          <a class="social-link" href="https://instagram.com/lavaleursupermarche" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="../data/instagram.png" alt="" width="24" height="24">
+          </a>
+          <a class="social-link" href="https://www.facebook.com/LaValeurSupermarket" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="../data/facebook.png" alt="" width="24" height="24">
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/company/la-valeur-supermarch%C3%A9/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
+            <img src="../data/linkedin.png" alt="" width="24" height="24">
+          </a>
+          <a class="social-link" href="https://Wa.me/+9613089019" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp">
+            <img src="../data/whatsapp.png" alt="" width="24" height="24">
+          </a>
+        </nav>
+      </header>
 
-      
-      <a class="entries-link" href="https://bit.ly/34VmBqx" target="_blank">
-        <img src="../data/mobile_app.png" alt="App" width="20" height="20">
-        <span>Download Our App</span>
-      </a>
-      
+      <div class="entries">
+        <a class="entry-link" href="https://lavaleursupermarche.com" target="_blank" rel="noopener noreferrer">
+          <img src="../data/world-wide-web.png" alt="" width="22" height="22">
+          <span>Visit Our Website</span>
+        </a>
 
-      
-      <div class="dropdown" id="websiteDropdown">
-        <button class="dropdown-toggle" onclick="toggleDropdown()">
-          <img src="../data/promotions.png" alt="Promotions" width="20" height="20">
-          <span>Our Promotions</span>
-        </button>
-        <div class="dropdown-menu faq-menu" id="dropdownMenu">
-          
-          <a href="https://lavaleursupermarche.com/shop/stores/131/Achrafieh/section/1/Promotions" target="_blank">Achrafieh Promotions</a>
-          
-          <a href="https://lavaleursupermarche.com/shop/stores/4/Ajaltoun/section/1/Promotions" target="_blank">Ajaltoun Promotions</a>
-          
-          <a href="https://lavaleursupermarche.com/shop/stores/3/Bet%20el%20Kikko/section/1/Promotions" target="_blank">Beit el Kikko Promotions</a>
-          
-          <a href="https://lavaleursupermarche.com/shop/stores/2/Mazraat%20Yachouh/section/1/Promotions" target="_blank">Mazraat Yachouh Promotions</a>
-          
-          <a href="https://lavaleursupermarche.com/shop/stores/5/Zalka/section/1/Promotions" target="_blank">Zalka Promotions</a>
-          
+        <a class="entry-link" href="https://bit.ly/34VmBqx" target="_blank" rel="noopener noreferrer">
+          <img src="../data/mobile_app.png" alt="" width="22" height="22">
+          <span>Download Our App</span>
+        </a>
+
+        <div class="dropdown" data-dropdown>
+          <button class="dropdown-toggle" type="button" aria-expanded="false">
+            <img src="../data/promotions.png" alt="" width="22" height="22">
+            <span>Our Promotions</span>
+          </button>
+          <div class="dropdown-menu promo-menu">
+            <a href="https://lavaleursupermarche.com/shop/stores/131/Achrafieh/section/1/Promotions" target="_blank" rel="noopener noreferrer">Achrafieh Promotions</a>
+            <a href="https://lavaleursupermarche.com/shop/stores/4/Ajaltoun/section/1/Promotions" target="_blank" rel="noopener noreferrer">Ajaltoun Promotions</a>
+            <a href="https://lavaleursupermarche.com/shop/stores/3/Bet%20el%20Kikko/section/1/Promotions" target="_blank" rel="noopener noreferrer">Beit el Kikko Promotions</a>
+            <a href="https://lavaleursupermarche.com/shop/stores/2/Mazraat%20Yachouh/section/1/Promotions" target="_blank" rel="noopener noreferrer">Mazraat Yachouh Promotions</a>
+            <a href="https://lavaleursupermarche.com/shop/stores/5/Zalka/section/1/Promotions" target="_blank" rel="noopener noreferrer">Zalka Promotions</a>
+          </div>
         </div>
-      </div>
-      
 
-      
-      <div class="dropdown" id="faqDropdown">
-        <button class="dropdown-toggle" onclick="toggleFAQDropdown()">
-          <img src="../data/faq.png" alt="FAQ" width="20" height="20">
-          <span>Frequently Asked Questions</span>
-        </button>
-        <div class="dropdown-menu faq-menu" id="faqMenu">
-          
-          <div class="faq-item">
-            <div class="faq-question faq-menu" onclick="toggleAnswer(this)">Where are your stores?</div>
-            <div class="faq-answer">You can find our stores <a class='unstyled' href='https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D'>here</a>.</div>
+        <div class="dropdown" data-dropdown>
+          <button class="dropdown-toggle" type="button" aria-expanded="false">
+            <img src="../data/faq.png" alt="" width="22" height="22">
+            <span>Frequently Asked Questions</span>
+          </button>
+          <div class="dropdown-menu faq-menu">
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Where are your stores?</button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">You can find our stores <a class='unstyled' href='https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D'>here</a>.</div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">What are your opening hours?</button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Our Achrafieh branch is open daily from 8:00 AM to 10:00 PM, while all other branches operate until 9:00 PM.</div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Do you have a loyalty program?</button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Every time you shop at any La Valeur Supermarché branch, you earn points on your purchases. These points are fully redeemable for cashback, which you can use toward any future purchase at any of our branches. Joining is easy: just download our mobile app and apply through it to become a loyalty member.</div>
+              </div>
+            </article>
           </div>
-          
-          <div class="faq-item">
-            <div class="faq-question faq-menu" onclick="toggleAnswer(this)">What are your opening hours?</div>
-            <div class="faq-answer">Our Achrafieh branch is open daily from 8:00 AM to 10:00 PM, while all other branches operate until 9:00 PM.</div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question faq-menu" onclick="toggleAnswer(this)">Do you have a loyalty program?</div>
-            <div class="faq-answer">Every time you shop at any La Valeur Supermarché branch, you earn points on your purchases. These points are fully redeemable for cashback, which you can use toward any future purchase at any of our branches. Joining is easy: just download our mobile app and apply through it to become a loyalty member.</div>
-          </div>
-          
         </div>
+
+        <a class="entry-link" href="https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+          <img src="../data/location.png" alt="" width="22" height="22">
+          <span>Our Locations</span>
+        </a>
+
+
+        <a class="entry-link" href="mailto:customerservice@lavaleur.net">
+          <img src="../data/mail.png" alt="" width="22" height="22">
+          <span>customerservice@lavaleur.net</span>
+        </a>
       </div>
-      
-
-      
-      <a class="entries-link" href="https://www.google.com/maps/search/La+Valeur/@33.9271085,35.5615685,13z/data=!3m1!4b1?entry=ttu&amp;g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
-        <img src="../data/location.png" alt="Location" width="20" height="20">
-        <span>Our Locations</span>
-      </a>
-      
-
-      
-
-      
-      <a class="entries-link" href="mailto:customerservice@lavaleur.net">
-        <img src="../data/mail.png" alt="Email" width="20" height="20">
-        <span>customerservice@lavaleur.net</span>
-      </a>
-      
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script>
-    function toggleDropdown() {
-      const promoMenu = document.getElementById("dropdownMenu");
-      const faqMenu = document.getElementById("faqMenu");
-      if (faqMenu) faqMenu.classList.remove("show");
-      promoMenu.classList.toggle("show");
+    const dropdowns = document.querySelectorAll("[data-dropdown]");
+
+    function closeDropdown(dropdown) {
+      dropdown.classList.remove("is-open");
+      dropdown.querySelector(".dropdown-toggle")?.setAttribute("aria-expanded", "false");
+      dropdown.querySelectorAll(".faq-item.is-open").forEach((item) => {
+        item.classList.remove("is-open");
+        item.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
+      });
     }
 
-    function toggleFAQDropdown() {
-      const promoMenu = document.getElementById("dropdownMenu");
-      const faqMenu = document.getElementById("faqMenu");
-      if (promoMenu) promoMenu.classList.remove("show");
-      faqMenu.classList.toggle("show");
-    }
+    dropdowns.forEach((dropdown) => {
+      const toggle = dropdown.querySelector(".dropdown-toggle");
 
-    function toggleAnswer(clicked) {
-      const allItems = document.querySelectorAll('.faq-item');
-      const parent = clicked.parentElement;
-      allItems.forEach(item => item !== parent && item.classList.remove('active'));
-      parent.classList.toggle('active');
-    }
+      toggle?.addEventListener("click", () => {
+        const willOpen = !dropdown.classList.contains("is-open");
+        dropdowns.forEach((item) => {
+          if (item !== dropdown) closeDropdown(item);
+        });
+        dropdown.classList.toggle("is-open", willOpen);
+        toggle.setAttribute("aria-expanded", String(willOpen));
+      });
+    });
+
+    document.querySelectorAll(".faq-question").forEach((question) => {
+      question.addEventListener("click", () => {
+        const item = question.closest(".faq-item");
+        const menu = question.closest(".faq-menu");
+        const willOpen = !item.classList.contains("is-open");
+
+        menu?.querySelectorAll(".faq-item").forEach((faqItem) => {
+          if (faqItem !== item) {
+            faqItem.classList.remove("is-open");
+            faqItem.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        item.classList.toggle("is-open", willOpen);
+        question.setAttribute("aria-expanded", String(willOpen));
+      });
+    });
 
     window.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
-        document.getElementById("dropdownMenu")?.classList.remove("show");
-        document.getElementById("faqMenu")?.classList.remove("show");
+        dropdowns.forEach(closeDropdown);
       }
     });
 
     window.addEventListener("click", function (e) {
-      const promoDropdown = document.getElementById("websiteDropdown");
-      const faqDropdown = document.getElementById("faqDropdown");
-      if (!promoDropdown.contains(e.target)) {
-        document.getElementById("dropdownMenu").classList.remove("show");
-      }
-      if (!faqDropdown.contains(e.target)) {
-        document.getElementById("faqMenu").classList.remove("show");
-      }
+      if (!e.target.closest("[data-dropdown]")) dropdowns.forEach(closeDropdown);
     });
   </script>
 </body>
