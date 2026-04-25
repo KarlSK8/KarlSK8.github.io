@@ -1,3 +1,4 @@
+<!-- template.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,152 +8,132 @@
   <title>{{ company }}</title>
 </head>
 <body>
-  <main class="page-shell">
-    <section class="card" aria-label="{{ company }} links">
-      <header class="profile">
-        {% if website_link %}
-        <a href="{{ website_link }}" target="_blank" rel="noopener noreferrer" class="avatar-link" aria-label="{{ company }} website">
-          <img src="{{ avatar_path }}" alt="{{ company }} logo" class="avatar" />
-        </a>
-        {% else %}
+  <div class="card">
+    {% if website_link %}
+      <a href="{{ website_link }}" target="_blank" class="avatar-link" aria-label="{{ company }} website">
         <img src="{{ avatar_path }}" alt="{{ company }} logo" class="avatar" />
-        {% endif %}
+      </a>
+      {% else %}
+      <img src="{{ avatar_path }}" alt="{{ company }} logo" class="avatar" />
+    {% endif %}
+    <h1>{{ company }} Connections</h1>
+    <p class="role">{{ bio }}</p>
 
-        <h1>{{ company }} Connections</h1>
-        <p class="role">{{ bio }}</p>
+    <div class="socials">
+      {% for platform, url in social_links.items() %}
+      <a class="social-link" href="{{ url }}" target="_blank">
+        <img src="../data/{{ platform }}.png" alt="{{ platform }} icon" width="27" height="27">
+      </a>
+      {% endfor %}
+    </div>
 
-        <nav class="socials" aria-label="Social profiles">
-          {% for platform, url in social_links.items() %}
-          <a class="social-link" href="{{ url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ platform|capitalize }}">
-            <img src="../data/{{ platform }}.png" alt="" width="24" height="24">
-          </a>
+    <div class="entries">
+      {% if website_link %}
+      <a class="entries-link" href="{{ website_link }}" target="_blank">
+        <img src="../data/world-wide-web.png" alt="Website" width="20" height="20">
+        <span>{{ website_phrase }}</span>
+      </a>
+      {% endif %}
+
+      {% if app_link %}
+      <a class="entries-link" href="{{ app_link }}" target="_blank">
+        <img src="../data/mobile_app.png" alt="App" width="20" height="20">
+        <span>{{ app_phrase }}</span>
+      </a>
+      {% endif %}
+
+      {% if promotions %}
+      <div class="dropdown" id="websiteDropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown()">
+          <img src="../data/promotions.png" alt="Promotions" width="20" height="20">
+          <span>Our Promotions</span>
+        </button>
+        <div class="dropdown-menu faq-menu" id="dropdownMenu">
+          {% for promo in promotions %}
+          <a href="{{ promo.link }}" target="_blank">{{ promo.name }}</a>
           {% endfor %}
-        </nav>
-      </header>
-
-      <div class="entries">
-        {% if website_link %}
-        <a class="entry-link" href="{{ website_link }}" target="_blank" rel="noopener noreferrer">
-          <img src="../data/world-wide-web.png" alt="" width="22" height="22">
-          <span>{{ website_phrase }}</span>
-        </a>
-        {% endif %}
-
-        {% if app_link %}
-        <a class="entry-link" href="{{ app_link }}" target="_blank" rel="noopener noreferrer">
-          <img src="../data/mobile_app.png" alt="" width="22" height="22">
-          <span>{{ app_phrase }}</span>
-        </a>
-        {% endif %}
-
-        {% if promotions %}
-        <div class="dropdown" data-dropdown>
-          <button class="dropdown-toggle" type="button" aria-expanded="false">
-            <img src="../data/promotions.png" alt="" width="22" height="22">
-            <span>Our Promotions</span>
-          </button>
-          <div class="dropdown-menu promo-menu">
-            {% for promo in promotions %}
-            <a href="{{ promo.link }}" target="_blank" rel="noopener noreferrer">{{ promo.name }}</a>
-            {% endfor %}
-          </div>
         </div>
-        {% endif %}
-
-        {% if faqs %}
-        <div class="dropdown" data-dropdown>
-          <button class="dropdown-toggle" type="button" aria-expanded="false">
-            <img src="../data/faq.png" alt="" width="22" height="22">
-            <span>Frequently Asked Questions</span>
-          </button>
-          <div class="dropdown-menu faq-menu">
-            {% for faq in faqs %}
-            <article class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">{{ faq.question }}</button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">{{ faq.answer }}</div>
-              </div>
-            </article>
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
-
-        {% if location %}
-        <a class="entry-link" href="{{ location_link }}" target="_blank" rel="noopener noreferrer">
-          <img src="../data/location.png" alt="" width="22" height="22">
-          <span>{{ location }}</span>
-        </a>
-        {% endif %}
-
-        {% if work_phone %}
-        <a class="entry-link" href="tel:{{ work_phone|replace(' ', '') }}">
-          <img src="../data/work_phone.png" alt="" width="22" height="22">
-          <span>{{ work_phone }}</span>
-        </a>
-        {% endif %}
-
-        {% if work_email %}
-        <a class="entry-link" href="mailto:{{ work_email }}">
-          <img src="../data/mail.png" alt="" width="22" height="22">
-          <span>{{ work_email }}</span>
-        </a>
-        {% endif %}
       </div>
-    </section>
-  </main>
+      {% endif %}
+
+      {% if faqs %}
+      <div class="dropdown" id="faqDropdown">
+        <button class="dropdown-toggle" onclick="toggleFAQDropdown()">
+          <img src="../data/faq.png" alt="FAQ" width="20" height="20">
+          <span>Frequently Asked Questions</span>
+        </button>
+        <div class="dropdown-menu faq-menu" id="faqMenu">
+          {% for faq in faqs %}
+          <div class="faq-item">
+            <div class="faq-question faq-menu" onclick="toggleAnswer(this)">{{ faq.question }}</div>
+            <div class="faq-answer">{{ faq.answer }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if location %}
+      <a class="entries-link" href="{{ location_link }}">
+        <img src="../data/location.png" alt="Location" width="20" height="20">
+        <span>{{ location }}</span>
+      </a>
+      {% endif %}
+
+      {% if work_phone %}
+      <a class="entries-link" href="tel:{{ work_phone }}">
+        <img src="../data/work_phone.png" alt="Phone" width="20" height="20">
+        <span>{{ work_phone }}</span>
+      </a>
+      {% endif %}
+
+      {% if work_email %}
+      <a class="entries-link" href="mailto:{{ work_email }}">
+        <img src="../data/mail.png" alt="Email" width="20" height="20">
+        <span>{{ work_email }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
 
   <script>
-    const dropdowns = document.querySelectorAll("[data-dropdown]");
-
-    function closeDropdown(dropdown) {
-      dropdown.classList.remove("is-open");
-      dropdown.querySelector(".dropdown-toggle")?.setAttribute("aria-expanded", "false");
-      dropdown.querySelectorAll(".faq-item.is-open").forEach((item) => {
-        item.classList.remove("is-open");
-        item.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
-      });
+    function toggleDropdown() {
+      const promoMenu = document.getElementById("dropdownMenu");
+      const faqMenu = document.getElementById("faqMenu");
+      if (faqMenu) faqMenu.classList.remove("show");
+      promoMenu.classList.toggle("show");
     }
 
-    dropdowns.forEach((dropdown) => {
-      const toggle = dropdown.querySelector(".dropdown-toggle");
+    function toggleFAQDropdown() {
+      const promoMenu = document.getElementById("dropdownMenu");
+      const faqMenu = document.getElementById("faqMenu");
+      if (promoMenu) promoMenu.classList.remove("show");
+      faqMenu.classList.toggle("show");
+    }
 
-      toggle?.addEventListener("click", () => {
-        const willOpen = !dropdown.classList.contains("is-open");
-        dropdowns.forEach((item) => {
-          if (item !== dropdown) closeDropdown(item);
-        });
-        dropdown.classList.toggle("is-open", willOpen);
-        toggle.setAttribute("aria-expanded", String(willOpen));
-      });
-    });
-
-    document.querySelectorAll(".faq-question").forEach((question) => {
-      question.addEventListener("click", () => {
-        const item = question.closest(".faq-item");
-        const menu = question.closest(".faq-menu");
-        const willOpen = !item.classList.contains("is-open");
-
-        menu?.querySelectorAll(".faq-item").forEach((faqItem) => {
-          if (faqItem !== item) {
-            faqItem.classList.remove("is-open");
-            faqItem.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
-          }
-        });
-
-        item.classList.toggle("is-open", willOpen);
-        question.setAttribute("aria-expanded", String(willOpen));
-      });
-    });
+    function toggleAnswer(clicked) {
+      const allItems = document.querySelectorAll('.faq-item');
+      const parent = clicked.parentElement;
+      allItems.forEach(item => item !== parent && item.classList.remove('active'));
+      parent.classList.toggle('active');
+    }
 
     window.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
-        dropdowns.forEach(closeDropdown);
+        document.getElementById("dropdownMenu")?.classList.remove("show");
+        document.getElementById("faqMenu")?.classList.remove("show");
       }
     });
 
     window.addEventListener("click", function (e) {
-      if (!e.target.closest("[data-dropdown]")) dropdowns.forEach(closeDropdown);
+      const promoDropdown = document.getElementById("websiteDropdown");
+      const faqDropdown = document.getElementById("faqDropdown");
+      if (!promoDropdown.contains(e.target)) {
+        document.getElementById("dropdownMenu").classList.remove("show");
+      }
+      if (!faqDropdown.contains(e.target)) {
+        document.getElementById("faqMenu").classList.remove("show");
+      }
     });
   </script>
 </body>
