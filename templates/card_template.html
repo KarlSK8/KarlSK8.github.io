@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../css/style.css">
-  <link href="https://unpkg.com/@-webfont@latest/tabler-icons.min.css">
 
 <title>
   {{ first_name }} {% if middle_name %} {{ middle_name }} {% endif %} {{ last_name }} | Business Card
@@ -34,7 +33,7 @@
         </a>
       {% endif %}
 
-      {% if cell_phone %}
+      {% if work_phone %}
         <a class="social-link" href="tel:{{ work_phone }}">
           <img src="../data/work_phone.png" alt="Website icon" width="20" height="20" style="vertical-align: middle; margin-right: 4px;; filter: brightness(0) invert(1);">
             <span>{{ work_phone }}{% if extension %} ext. {{ extension }}{% endif %}</span>

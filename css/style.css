@@ -79,11 +79,18 @@ h1 {
   text-align: left;
   gap: 10px;
   text-decoration: none;
-  color: var(--text-color);
+  color: #ffffff;
   font-size: 0.95rem;
   line-height: 1.4;
   margin-bottom: 2px;
   transition: transform 0.2s, color 0.2s;
+}
+
+.social-link:link,
+.social-link:visited,
+.social-link:active {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .social-link:hover {
@@ -101,7 +108,11 @@ h1 {
 .icon-wrapper img {
   width: 20px;
   height: 20px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) !important;
+}
+
+.social-link img {
+  filter: brightness(0) invert(1) !important;
 }
 
 .text-wrapper {
